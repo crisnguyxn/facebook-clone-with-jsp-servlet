@@ -1,0 +1,167 @@
+.header-logo img{
+    height: 40px;
+    width: 40px;
+}
+.header-logo{
+    margin-right:10px;
+    margin-left: 10px;
+}
+.search-field img{
+    height: 20px;
+    width: 20px;
+    padding:10px;
+    background-color: #f0f2f5;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    /*color:#65676b;*/
+}
+.search-field input{
+    background-color: #f0f2f5;
+    height: 40px;
+    padding:10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    outline: none;
+    border:none;
+}
+.search-field{
+    display: flex;
+    align-items: center;
+}
+.header-left{
+    display: flex;
+    align-items: center;
+}
+.header-center{
+    display: flex;
+    align-items: center;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding:5px;
+    position: fixed;
+    width: 100%;
+    z-index:1;
+    background-color: white;
+}
+.header-left{
+    flex:0.33;
+}
+.header-right{
+    flex:0.33;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+.header-center{
+    flex:0.33;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.header-center{
+    height: 40px;
+    width: 1100px;
+}
+.header-center .field{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    margin-right: 5px;
+    padding: 8px;
+    border:20px;
+    border-radius: 10px;
+}
+.header-center .field-last{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    margin-right: 5px;
+    padding: 8px;
+    border:20px;
+    border-radius: 10px;
+}
+.header-center .field-last:hover{
+    background-color: #f0f2f5;
+}
+.header-center .field:hover{
+    background-color: #f0f2f5;
+}
+.header-center img{
+    height: 28px;
+    width: 28px;
+}
+.header a{
+    background-color: transparent;
+    border:none;
+    outline: none;
+}
+@media only screen and (max-width: 600px) {
+    /* For phone: */
+    .search-field img {
+        height: 20px;
+        width: 20px;
+        padding: 10px;
+        border-radius: 50%;
+    }
+    .search-field input{
+        display: none;
+    }
+    .header-center .field{
+        display: none;
+    }
+    .header-center .field-last{
+        display: none;
+    }
+    .header-center{
+        height: 40px;
+        width: 1100px;
+        justify-content: flex-start;
+    }
+    .header-left{
+        flex:0.33;
+        width: 100px;
+    }
+}
+@media only screen and ( min-width: 601px) and (max-width: 900px) {
+    .search-field img {
+        height: 20px;
+        width: 20px;
+        padding: 10px;
+        border-radius: 50%;
+    }
+    .search-field input{
+        display: none;
+    }
+    .header-center .field-last {
+        display: none;
+    }
+    .header-center .field-hamburger {
+        display: flex;
+        justify-content: center;
+        width: 20%;
+        margin-right: 5px;
+        padding: 8px;
+        border: 20px;
+        border-radius: 10px;
+    }
+}
+@media only screen and (min-width: 901px) {
+        .header-center .field-hamburger{
+            display: none;
+        }
+}
+.field-right{
+    padding:10px;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    margin-left: 10px;
+}
+.field-right img{
+    height: 24px;
+    width: 24px;
+}

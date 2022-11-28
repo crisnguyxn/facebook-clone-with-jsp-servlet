@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    margin:0;
+    height: 100vh;
+}
+.login-header{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f2f5;
+}
+.login-center{
+    flex:0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-footer{
+    height: 30%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+.login-information{
+    flex:0.5;
+    justify-content: flex-start;
+}
+.login-title h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color:#1877f2;
+    font-size: 50px;
+    margin:0 !important;
+}
+.login-title p{
+    font-family: 'Poppins', sans-serif;
+    color: #1c1e21;
+    font-size: 20px;
+    margin-top:10px !important;
+}
+.login-form{
+    border-radius: 8px;
+    background-color: white;
+    -webkit-box-shadow: 0 -2px 15px 2px #ADADAD;
+    box-shadow: 0 -2px 15px 2px #ADADAD;
+    padding:15px;
+    height: 280px;
+    width: 300px;
+    margin-left:10px;
+}
+.login-field button{
+    height: 40px;
+    width: 300px;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border:none;
+    background-color: #1877f2;
+    border-radius: 8px;
+}
+.login-forgotten-pass{
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #b2b2b2;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+.login-forgotten-pass a:-webkit-any-link{
+    text-decoration: none !important;
+    color:#1877f2 !important;
+}
+.login-forgotten-pass a:-webkit-any-link:hover{
+    text-decoration: underline !important;
+    color:#1877f2 !important;
+}
+.btn-creation{
+    display: flex;
+    justify-content: center;
+}
+.btn-creation a{
+    height: 40px;
+    width: 60%;
+    color:white;
+    font-weight: bold;
+    background-color: #42b72a;
+    margin-top:15px;
+    margin-bottom: 15px;
+    border:none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-creation a:-webkit-any-link{
+    text-decoration: none !important;
+    color:white;
+    font-weight: bold;
+}
+.btn-creation a:-webkit-any-link:hover{
+    text-decoration: none !important;
+    color:white;
+    font-weight: bold;
+}
+.error-message{
+    color:red;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+}
+.login-field input{
+    height: 40px;
+    width: 300px;
+    margin-bottom: 10px;
+    border:1px solid #ADADAD;
+    border-radius: 8px;
+    outline: none;
+}
+@media only screen and (max-width: 785px) {
+    .login-center {
+        display: flex;
+        flex-direction: column;
+    }
+    .login-title{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-title{
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 965px) {
+    .login-center {
+        flex:1;
+        display: flex;
+        justify-content: flex-start;
+        padding:10px;
+    }
+    .login-footer{
+        display: flex;
+        justify-content: flex-start;
+        padding:10px;
+    }
+}

@@ -1,0 +1,15 @@
+body{
+    margin:0 !important;
+}
+.friend{
+    display: flex;
+}
+.friend-left{
+    flex:0.3;
+}
+.friend-right{
+    flex:0.3;
+}
+.friend-center{
+    flex:1;
+}

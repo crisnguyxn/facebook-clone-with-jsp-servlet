@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    margin:0;
+    height: 100vh;
+}
+.register-header{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f2f5;
+}
+.register-center{
+    text-align: center;
+}
+.register-footer{
+    height: 20%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+.register-field{
+}
+.register-title h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color:#1877f2;
+    font-size: 50px;
+    margin:0 !important;
+}
+.register-msg h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color:black;
+    font-size: 30px;
+    margin:0 !important;
+}
+.error-message{
+    color:red;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+}
+.register-msg p{
+    font-family: 'Poppins', sans-serif;
+    color: #1c1e21;
+    font-size: 15px;
+    margin-top:10px !important;
+}
+.login-forgotten-pass{
+    text-align: center;
+    padding-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+a:-webkit-any-link{
+    text-decoration: none !important;
+    color:#1877f2 !important;
+}
+a:-webkit-any-link:hover{
+    text-decoration: underline !important;
+    color:#1877f2 !important;
+}
+.btn-creation{
+    display: flex;
+    justify-content: center;
+}
+.btn-creation button{
+    height: 40px;
+    width: 60%;
+    color:white;
+    font-weight: bold;
+    background-color: #42b72a;
+    margin-top:15px;
+    margin-bottom: 15px;
+    border:none;
+    border-radius: 8px;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+.register-field input{
+    height: 40px;
+    width: 400px;
+    margin-bottom: 10px;
+    border:1px solid #ADADAD;
+    border-radius: 8px;
+    outline: none;
+}
+.register-form{
+    margin-top: 5vh;
+    border-radius: 8px;
+    background-color: white;
+    -webkit-box-shadow: 0 -2px 15px 2px #ADADAD;
+    box-shadow: 0 -2px 15px 2px #ADADAD;
+    padding:15px;
+    height: 580px;
+    width: 400px;
+    margin-left:10px;
+}
+.register-field-1 input{
+    height: 40px;
+    width: 195px;
+    margin-bottom: 10px;
+    border:1px solid #ADADAD;
+    border-radius: 8px;
+    outline: none;
+}
+.register-field-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.register-dob-field input{
+    height: 40px;
+    width: 125px;
+    margin-bottom: 10px;
+    border:1px solid #ADADAD;
+    border-radius: 8px;
+    outline: none;
+}
+.dob-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.register-dob{
+    font-family: 'Poppins', sans-serif;
+}
+.register-dob label{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 12px;
+}
+.gender-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.register-gender{
+    font-family: 'Poppins', sans-serif;
+}
+.register-gender p{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 12px;
+    margin:0 !important;
+}
+.register-gender-field{
+    display: flex;
+    height: 40px;
+    width: 125px;
+    margin-bottom: 10px;
+    border:1px solid #ADADAD;
+    border-radius: 8px;
+    outline: none;
+    justify-content: space-around;
+    align-items: center;
+}
+.register-attr p {
+    color:#b2b2b2;
+    margin:0 !important;
+    font-size: 11px;
+    justify-content: flex-start;
+}
+.register-attr {
+    display: flex;
+    flex-direction: column;
+}
+.register-information{
+    flex:0.5;
+    justify-content: flex-start;
+}
