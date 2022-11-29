@@ -315,15 +315,25 @@
     }
 }
 .comment {
+    flex-direction: column;
     display: none;
+    max-width: 500px;
 }
 .comment-field{
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    padding:5px;
+    padding:5px 0 5px 0;
 }
 .comment-input{
     flex:1;
+    width: 100%;
+    margin-block-end: 0 !important;
+}
+.comment-list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 .comment-user img{
     margin-right: 5px;
@@ -338,4 +348,21 @@
     outline: none;
     margin-right:10px;
     padding-left: 15px;
+}
+.comment-item{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+.msg-info-user{
+    padding:10px;
+    border-radius: 15px;
+    background-color: #f0f2f5;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    width: 88%;
+}
+.msg-info{
+    font-weight: 300;
+    overflow-wrap: break-word;
 }
