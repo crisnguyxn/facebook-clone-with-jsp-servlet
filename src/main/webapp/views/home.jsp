@@ -206,20 +206,32 @@
                                 <p>Share</p>
                             </div>
                         </div>
-                        <div class="comment" id="commentField">
-                            <div class="comment-field">
-                                <div class="comment-user">
-                                    <img src="img/userx.png" alt="">
+                            <div class="comment" id="commentField">
+                                <div class="comment-field">
+                                    <div class="comment-user">
+                                        <img src="img/userx.png" alt="">
+                                    </div>
+                                    <form action="<c:url value='/postCmt'/>" method="post" class="comment-input">
+                                        <label for="content">
+                                            <input placeholder="Write a public comment" name="content" id="contentId">
+                                        </label>
+                                        <input type="hidden" value="${item.userId}" name="userId">
+                                        <input type="hidden" value="${item.id}" name="postId">
+                                    </form>
                                 </div>
-                                <form action="<c:url value='/postCmt'/>" method="post" class="comment-input">
-                                    <label for="content">
-                                        <input placeholder="Write a public comment" name="content" id="contentId">
-                                    </label>
-                                    <input type="hidden" value="${item.userId}" name="userId">
-                                    <input type="hidden" value="${item.id}" name="postId">
-                                </form>
-                            </div>
-                            <div>${item.content}</div>
+                                <div class="comment-list">
+                                    <div class="comment-item">
+                                        <div class="post-user-avatar">
+                                            <a href=""><img src="img/userx.png" alt=""></a>
+                                        </div>
+                                        <div class="msg-info-user">
+                                                ${item.user.firstName} ${item.user.surName}
+                                            <div class="msg-info">
+                                                this is messagevxcxcvxlcknvlkxcnklxncnxckllkxcnvklnxlkndslknflsdknafklsdanfklasndlkfnsdlk
+                                            </div>
+                                        </div>
+                                    </div>
+                           </div>
                         </div>
                 </div>
                 </c:forEach>
@@ -271,12 +283,5 @@
             $("#commentField").show(100);
         });
     });
-    // $('#file').change( function(e)
-    // {
-    //     let fileName = e.target.files[0].name;
-    //     if(fileName != null){
-    //         $("#kaka").click();
-    //     }
-    // });
 </script>
 </html>

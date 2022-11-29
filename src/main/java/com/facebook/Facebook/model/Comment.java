@@ -1,16 +1,16 @@
 package com.facebook.Facebook.model;
 
 public class Comment extends AbstractModel<Comment>{
-    private String content;
+    private String message;
     private int userId;
     private int postId;
 
-    public String getContent() {
-        return content;
+    public String getMessage() {
+        return message;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setMessage(String content) {
+        this.message = content;
     }
 
     public int getUserId() {
