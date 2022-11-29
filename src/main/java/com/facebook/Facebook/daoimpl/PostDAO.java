@@ -16,7 +16,7 @@ public class PostDAO extends AbstractDAO<Post> implements IPostDAO {
 
     @Override
     public List<Post> findAll() {
-        String sql = "SELECT * FROM post AS p INNER JOIN user AS u ON p.userid = u.id WHERE mode = ? ORDER BY p.createddate DESC";
+        String sql = "SELECT * FROM post AS p INNER JOIN user AS u INNER JOIN comment as c ON p.userid = u.id AND u.id = c.userid WHERE mode = ? ORDER BY p.createddate DESC";
         return query(sql,new PostMapper(),1);
     }
 }

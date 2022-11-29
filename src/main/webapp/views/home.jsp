@@ -199,12 +199,27 @@
                             </div>
                             <div class="icon">
                                 <img src="img/comment.png" alt=""/>
-                                <p>Comment</p>
+                                <p id="comment">Comment</p>
                             </div>
                             <div class="icon">
                                 <img src="img/share.png" alt="">
                                 <p>Share</p>
                             </div>
+                        </div>
+                        <div class="comment" id="commentField">
+                            <div class="comment-field">
+                                <div class="comment-user">
+                                    <img src="img/userx.png" alt="">
+                                </div>
+                                <form action="<c:url value='/postCmt'/>" method="post" class="comment-input">
+                                    <label for="content">
+                                        <input placeholder="Write a public comment" name="content" id="contentId">
+                                    </label>
+                                    <input type="hidden" value="${item.userId}" name="userId">
+                                    <input type="hidden" value="${item.id}" name="postId">
+                                </form>
+                            </div>
+                            <div>${item.content}</div>
                         </div>
                 </div>
                 </c:forEach>
@@ -249,6 +264,11 @@
     $(document).ready(function(){
         $("#openForm").click(function(){
             $("#form").show(100);
+        });
+    });
+    $(document).ready(function(){
+        $("#comment").click(function(){
+            $("#commentField").show(100);
         });
     });
     // $('#file').change( function(e)

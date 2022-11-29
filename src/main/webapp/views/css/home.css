@@ -314,3 +314,28 @@
         height: 500px;
     }
 }
+.comment {
+    display: none;
+}
+.comment-field{
+    display: flex;
+    align-items: center;
+    padding:5px;
+}
+.comment-input{
+    flex:1;
+}
+.comment-user img{
+    margin-right: 5px;
+}
+.comment-input input{
+    border-radius: 15px;
+    height: 40px;
+    width: 100%;
+    background-color: #f0f2f5;
+    color:#65676b;
+    border:none;
+    outline: none;
+    margin-right:10px;
+    padding-left: 15px;
+}
