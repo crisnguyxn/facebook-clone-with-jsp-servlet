@@ -23,4 +23,19 @@ public class PostService implements IPostService {
     public List<Post> findAll() {
         return postDAO.findAll();
     }
+
+    @Override
+    public Post findOneById(Integer postId) {
+        return postDAO.findOneById(postId);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        postDAO.delete(id);
+    }
+
+    @Override
+    public void update(Post updatedPost) {
+        postDAO.update(updatedPost);
+    }
 }

@@ -8,4 +8,7 @@ import java.util.List;
 public interface IPostDAO extends GenericDAO<Post> {
     Integer create(Post post);
     List<Post> findAll();
+    Post findOneById(Integer postId);
+    void delete(Integer id);
+    void update(Post updatedPost);
 }

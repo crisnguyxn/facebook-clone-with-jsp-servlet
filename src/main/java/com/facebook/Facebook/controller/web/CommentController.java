@@ -4,7 +4,6 @@ import com.facebook.Facebook.model.Comment;
 import com.facebook.Facebook.service.ICommentService;
 import com.facebook.Facebook.serviceimpl.CommentService;
 import com.facebook.Facebook.utils.FormUtil;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +15,7 @@ import java.sql.Timestamp;
 @WebServlet(urlPatterns = {"/postCmt"})
 public class CommentController extends HttpServlet {
 
-    private ICommentService commentService;
+    private final ICommentService commentService;
     public CommentController(){
         commentService = new CommentService();
     }
@@ -27,7 +26,7 @@ public class CommentController extends HttpServlet {
         comment.setCreatedDate(new Timestamp(System.currentTimeMillis()));
         int result = commentService.create(comment);
         if(result > 0 ){
-            resp.sendRedirect(req.getServletPath()+"/homepage");
+            resp.sendRedirect(req.getContextPath()+"/homepage");
         }
     }
 }

@@ -7,4 +7,6 @@ import java.util.List;
 public interface GenericDAO<T> {
     Integer save(String sql,Object... parameters);
     <T> List<T> query(String sql, IRowMapper<T> rowMapper,Object... parameters);
+    void delete(String sql, Object... parameters);
+    void update(String sql,Object... parameters);
 }
