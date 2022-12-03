@@ -1,6 +1,7 @@
 package com.facebook.Facebook.model;
 
 import java.sql.Blob;
+import java.util.List;
 
 public class Post extends AbstractModel<Post> {
     private int userId;
@@ -8,6 +9,15 @@ public class Post extends AbstractModel<Post> {
     private String content;
     private User user;
     private String fileUrl;
+    private List<Comment> commentList;
+
+    public List<Comment> getCommentList() {
+        return commentList;
+    }
+
+    public void setCommentList(List<Comment> commentList) {
+        this.commentList = commentList;
+    }
 
     public User getUser() {
         return user;

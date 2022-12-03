@@ -22,10 +22,15 @@ public class FormUtil {
         String realPath = null;
         try {
             object = clazz.newInstance();
-            if(request.getServletPath().equals("/post")){
+            if(request.getServletPath().equals("/post") || request.getServletPath().equals("/update")){
                 Part part = request.getPart("file");
                 realPath = request.getServletContext().getRealPath("/img");
                 filePath = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+                if(filePath.equals("")){
+                    BeanUtils.populate(object, request.getParameterMap());
+                    BeanUtils.setProperty(object,"fileUrl","");
+                    return object;
+                }
                 part.write(realPath+"/"+filePath);
             }
             BeanUtils.populate(object, request.getParameterMap());

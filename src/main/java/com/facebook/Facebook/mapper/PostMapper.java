@@ -16,7 +16,12 @@ public class PostMapper implements IRowMapper<Post> {
             post.setContent(resultSet.getString("content"));
             post.setMode(resultSet.getInt("mode"));
             post.setCreatedDate(resultSet.getTimestamp("createddate"));
-            post.setFileUrl(resultSet.getString("fileUrl"));
+            if(resultSet.getString("fileUrl") != null){
+                post.setFileUrl(resultSet.getString("fileUrl"));
+            }
+            if(resultSet.getString("modifieddate") != null){
+                post.setModifiedDate(resultSet.getTimestamp("modifieddate"));
+            }
             User user = new User();
             user.setId(resultSet.getInt("userid"));
             user.setFirstName(resultSet.getString("firstname"));

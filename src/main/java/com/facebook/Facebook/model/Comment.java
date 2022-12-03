@@ -4,6 +4,15 @@ public class Comment extends AbstractModel<Comment>{
     private String message;
     private int userId;
     private int postId;
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public String getMessage() {
         return message;

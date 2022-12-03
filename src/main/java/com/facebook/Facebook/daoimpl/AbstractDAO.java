@@ -100,6 +100,80 @@ public class AbstractDAO<T> implements GenericDAO<T> {
         return null;
     }
 
+    @Override
+    public void delete(String sql, Object... parameters) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try{
+            connection = getConnection();
+            if(connection != null){
+                connection.setAutoCommit(false);
+                statement = connection.prepareStatement(sql);
+                setParameters(statement,parameters);
+                int result = statement.executeUpdate();
+                if(result > 0){
+                    connection.commit();
+                }
+            }
+        }catch(SQLException e){
+            try{
+                if(connection != null){
+                    connection.rollback();
+                }
+            }catch(SQLException e1){
+                e.printStackTrace();
+            }
+        }finally {
+            try{
+                if(connection!=null){
+                    connection.close();
+                }
+                if(statement!= null){
+                    statement.close();
+                }
+            }catch(SQLException e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void update(String sql, Object... parameters) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try{
+            connection = getConnection();
+            if(connection != null){
+                connection.setAutoCommit(false);
+                statement = connection.prepareStatement(sql);
+                setParameters(statement,parameters);
+                int result = statement.executeUpdate();
+                if(result > 0){
+                    connection.commit();
+                }
+            }
+        }catch(SQLException e){
+            try{
+                if(connection != null){
+                    connection.rollback();
+                }
+            }catch(SQLException e1){
+                e.printStackTrace();
+            }
+        }finally {
+            try{
+                if(connection!=null){
+                    connection.close();
+                }
+                if(statement!= null){
+                    statement.close();
+                }
+            }catch(SQLException e){
+                e.printStackTrace();
+            }
+        }
+    }
+
     private void setParameters(PreparedStatement statement, Object[] parameters) {
         try{
             for (int i = 0; i < parameters.length ; i++) {
