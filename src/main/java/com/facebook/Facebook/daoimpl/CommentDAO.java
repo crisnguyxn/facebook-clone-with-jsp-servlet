@@ -3,7 +3,6 @@ package com.facebook.Facebook.daoimpl;
 import com.facebook.Facebook.dao.ICommentDAO;
 import com.facebook.Facebook.mapper.CommentMapper;
 import com.facebook.Facebook.model.Comment;
-
 import java.util.List;
 
 public class CommentDAO extends AbstractDAO<Comment> implements ICommentDAO {

@@ -47,7 +47,8 @@ public class HomeController extends HttpServlet {
             rd.forward(req, resp);
         } else {
             User user = (User) req.getSession().getAttribute("USERMODEL");
-            req.setAttribute("userInfo", user);
+            User userInfo = userService.findUserById(user.getId());
+            req.setAttribute("userInfo", userInfo);
             List<Post> posts = postService.findAll();
             if (posts.size() == 0) {
                 RequestDispatcher rd = req.getRequestDispatcher("/views/home.jsp");

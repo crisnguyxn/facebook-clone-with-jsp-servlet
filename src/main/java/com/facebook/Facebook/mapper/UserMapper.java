@@ -1,7 +1,6 @@
 package com.facebook.Facebook.mapper;
 
 import com.facebook.Facebook.model.User;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -20,6 +19,15 @@ public class UserMapper implements IRowMapper<User> {
             user.setYear(resultSet.getInt("year"));
             user.setCreatedDate(resultSet.getTimestamp("createddate"));
             user.setCreatedBy(resultSet.getString("createdby"));
+            if(resultSet.getString("coverphoto") != null){
+                user.setCoverPhoto(resultSet.getString("coverphoto"));
+            }
+            if(resultSet.getString("avtphoto") != null){
+                user.setAvtPhoto(resultSet.getString("avtphoto"));
+            }
+            if(resultSet.getString("bio") != null){
+                user.setBio(resultSet.getString("bio"));
+            }
             if(resultSet.getTimestamp("modifieddate")!=null){
                 user.setModifiedDate(resultSet.getTimestamp("modifieddate"));
             }

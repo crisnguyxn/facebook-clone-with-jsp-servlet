@@ -2,7 +2,6 @@ package com.facebook.Facebook.daoimpl;
 
 import com.facebook.Facebook.dao.GenericDAO;
 import com.facebook.Facebook.mapper.IRowMapper;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

@@ -5,4 +5,6 @@ import com.facebook.Facebook.model.User;
 public interface IUserDAO extends GenericDAO<User> {
     Integer create(User user);
     User findUserByEmail(String email);
+    User findUserById(Integer userId);
+    void update(User updatedUser);
 }

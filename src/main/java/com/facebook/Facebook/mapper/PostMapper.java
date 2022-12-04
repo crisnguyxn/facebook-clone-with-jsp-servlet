@@ -2,7 +2,6 @@ package com.facebook.Facebook.mapper;
 
 import com.facebook.Facebook.model.Post;
 import com.facebook.Facebook.model.User;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -26,6 +25,8 @@ public class PostMapper implements IRowMapper<Post> {
             user.setId(resultSet.getInt("userid"));
             user.setFirstName(resultSet.getString("firstname"));
             user.setSurName(resultSet.getString("surname"));
+            user.setCoverPhoto(resultSet.getString("coverphoto"));
+            user.setAvtPhoto(resultSet.getString("avtphoto"));
             post.setUser(user);
             return post;
         }catch(SQLException e){

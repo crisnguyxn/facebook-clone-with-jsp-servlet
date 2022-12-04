@@ -67,7 +67,7 @@
     height: 40px;
     width: 1100px;
 }
-.header-center .field{
+.header-center .fields{
     display: flex;
     justify-content: center;
     width: 20%;
@@ -111,7 +111,7 @@
     .search-field input{
         display: none;
     }
-    .header-center .field{
+    .header-center .fields{
         display: none;
     }
     .header-center .field-last{

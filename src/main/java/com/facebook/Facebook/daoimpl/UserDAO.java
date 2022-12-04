@@ -3,7 +3,6 @@ package com.facebook.Facebook.daoimpl;
 import com.facebook.Facebook.dao.IUserDAO;
 import com.facebook.Facebook.mapper.UserMapper;
 import com.facebook.Facebook.model.User;
-
 import java.util.List;
 
 public class UserDAO extends AbstractDAO<User> implements IUserDAO {
@@ -18,5 +17,18 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
         String sql= "SELECT * FROM user WHERE email = ?";
         List<User> users = query(sql,new UserMapper(),email);
         return users.isEmpty() ? null : users.get(0);
+    }
+
+    @Override
+    public User findUserById(Integer userId) {
+        String sql = "SELECT * FROM user WHERE id = ?";
+        List<User> users = query(sql, new UserMapper(),userId);
+        return users.isEmpty()?null:users.get(0);
+    }
+
+    @Override
+    public void update(User updatedUser) {
+        String sql = "UPDATE user SET coverPhoto = ? , avtPhoto = ? WHERE id =?";
+        update(sql, updatedUser.getCoverPhoto(),updatedUser.getAvtPhoto(),updatedUser.getId());
     }
 }
