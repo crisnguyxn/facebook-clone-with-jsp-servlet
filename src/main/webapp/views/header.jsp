@@ -21,16 +21,16 @@
             </div>
         </div>
         <div class="header-center">
-            <div class="field">
+            <div class="fields">
                 <a href="<c:url value='/homepage'/>"><img src="img/homex.png" alt=""></a>
             </div>
-            <div class="field">
-                <a href="<c:url value='/friends'/>"><img src="img/group.png" alt=""></a>
+            <div class="fields">
+                <a href=""><img src="img/group.png" alt=""></a>
             </div>
-            <div class="field">
+            <div class="fields">
                 <a><img src="img/videox.png" alt=""></a>
             </div>
-            <div class="field">
+            <div class="fields">
                 <a><img src="img/shop.png" alt=""></a>
             </div>
             <div class="field-last">

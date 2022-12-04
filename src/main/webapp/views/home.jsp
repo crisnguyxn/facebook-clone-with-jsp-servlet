@@ -18,7 +18,7 @@
     <div class="homepage-left">
         <div class="utils">
             <div class="field">
-                <a href=""><img src="img/userx.png" alt=""></a>
+                <a href="<c:url value='/profile?id=${userInfo.id}'/>"><img src="${userInfo.avtPhoto}" alt=""></a>
                 <p>${userInfo.firstName} ${userInfo.surName}</p>
             </div>
             <div class="field">
@@ -67,7 +67,7 @@
                     <div class="post-form-main">
                         <form id="postForm" action="<c:url value='/post'/>" method="post" enctype="multipart/form-data">
                             <div class="post-header-field">
-                                <img src="img/userx.png" alt="">
+                                <img src="${userInfo.avtPhoto}" alt="">
                                 <div class="post-userinfo">
                                     <p id="userInfo">${userInfo.firstName} ${userInfo.surName}</p>
                                     <label for="mode">
@@ -132,7 +132,7 @@
             </div>
             <div class="post-creation">
                 <div class="post-creation-header">
-                    <img src="img/userx.png" alt="">
+                    <img src="${userInfo.avtPhoto}" alt="">
                     <button id="openForm">What's on your mind, ${userInfo.firstName}?</button>
                 </div>
                 <div class="post-attr">
@@ -155,7 +155,7 @@
                     <div class="post-header">
                         <div class="post-header-left">
                             <div class="post-user-avatar">
-                                <a href=""><img src="img/userx.png" alt=""></a>
+                                <a href="<c:url value='/profile?id=${item.user.id}'/>"><img src="${item.user.avtPhoto}" alt=""></a>
                             </div>
                             <div class="user-info">
                                     ${item.user.firstName} ${item.user.surName}
@@ -228,7 +228,7 @@
                     <div class="comment" id="commentField">
                         <div class="comment-field">
                             <div class="comment-user">
-                                <img src="img/userx.png" alt="">
+                                <img src="${userInfo.avtPhoto}" alt="">
                             </div>
                             <form action="<c:url value='/postCmt'/>" method="post" class="comment-input">
                                 <label for="content">
@@ -244,7 +244,7 @@
                                 <c:forEach items="${item.commentList}" var="cmt">
                                     <div class="comment-item">
                                         <div class="post-user-avatar">
-                                            <a href=""><img src="img/userx.png" alt=""></a>
+                                            <a href="<c:url value='/profile?id=${cmt.user.id}'/>"><img src="${cmt.user.avtPhoto}" alt=""></a>
                                         </div>
                                         <div class="msg-info-user">
                                                 ${cmt.user.firstName} ${cmt.user.surName}

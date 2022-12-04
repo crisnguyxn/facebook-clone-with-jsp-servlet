@@ -3,7 +3,6 @@ package com.facebook.Facebook.daoimpl;
 import com.facebook.Facebook.dao.IPostDAO;
 import com.facebook.Facebook.mapper.PostMapper;
 import com.facebook.Facebook.model.Post;
-
 import java.util.List;
 
 public class PostDAO extends AbstractDAO<Post> implements IPostDAO {

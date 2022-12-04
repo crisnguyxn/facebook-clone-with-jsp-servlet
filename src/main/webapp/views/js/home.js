@@ -65,6 +65,9 @@ function updatePost(postId) {
     $('#postForm').attr("action",'/Facebook_war_exploded/update?id='+postId);
     $("#form").toggle(100);
 }
+function savePost(postId) {
+    console.log(postId);
+}
 function deletePost(postId) {
     $.ajax({
         url:'delete?id='+postId,

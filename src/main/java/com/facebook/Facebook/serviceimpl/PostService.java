@@ -4,7 +4,6 @@ import com.facebook.Facebook.dao.IPostDAO;
 import com.facebook.Facebook.daoimpl.PostDAO;
 import com.facebook.Facebook.model.Post;
 import com.facebook.Facebook.service.IPostService;
-
 import java.util.List;
 
 public class PostService implements IPostService {

@@ -9,6 +9,33 @@ public class User extends AbstractModel<User> {
     private int month;
     private int year;
     private int gender;
+    private String coverPhoto;
+    private String avtPhoto;
+    private String bio;
+
+    public String getCoverPhoto() {
+        return coverPhoto;
+    }
+
+    public void setCoverPhoto(String coverPhoto) {
+        this.coverPhoto = coverPhoto;
+    }
+
+    public String getAvtPhoto() {
+        return avtPhoto;
+    }
+
+    public void setAvtPhoto(String avtPhoto) {
+        this.avtPhoto = avtPhoto;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
 
     public int getDate() {
         return date;

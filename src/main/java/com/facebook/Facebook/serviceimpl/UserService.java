@@ -5,8 +5,6 @@ import com.facebook.Facebook.daoimpl.UserDAO;
 import com.facebook.Facebook.model.User;
 import com.facebook.Facebook.service.IUserService;
 
-import javax.inject.Inject;
-
 public class UserService implements IUserService {
     private final IUserDAO userDAO;
     public UserService(){
@@ -20,5 +18,15 @@ public class UserService implements IUserService {
     @Override
     public User findUserByEmail(String email) {
         return userDAO.findUserByEmail(email);
+    }
+
+    @Override
+    public User findUserById(Integer userId) {
+        return userDAO.findUserById(userId);
+    }
+
+    @Override
+    public void updateUser(User updatedUser) {
+        userDAO.update(updatedUser);
     }
 }

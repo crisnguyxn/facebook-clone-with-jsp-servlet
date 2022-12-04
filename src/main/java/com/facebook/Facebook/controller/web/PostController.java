@@ -7,7 +7,6 @@ import com.facebook.Facebook.serviceimpl.CommentService;
 import com.facebook.Facebook.serviceimpl.PostService;
 import com.facebook.Facebook.utils.FormUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
