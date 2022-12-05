@@ -275,14 +275,14 @@
                 </div>
             </div>
         </div>
-        <div class="field">
-            <a href=""><img src="img/userx.png" alt=""></a>
-            <p>Dyann Nguyen</p>
-        </div>
-        <div class="field">
-            <a href=""><img src="img/userx.png" alt=""></a>
-            <p>Nguyen Thanh Huynh</p>
-        </div>
+        <c:if test="${userInfo.friendList.size() > 0}" >
+            <c:forEach items="${userInfo.friendList}" var="friend">
+                <div class="field">
+                    <a href="<c:url value='/profile?id=${friend.user.id}'/>"><img src="${friend.user.avtPhoto}" alt=""></a>
+                    <p>${friend.user.firstName} ${friend.user.surName}</p>
+                </div>
+            </c:forEach>
+        </c:if>
     </div>
 </div>
 </body>

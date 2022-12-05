@@ -1,6 +1,6 @@
 package com.facebook.Facebook.model;
 
-public class Comment extends AbstractModel<Comment>{
+public class Comment extends AbstractModel{
     private String message;
     private int userId;
     private int postId;

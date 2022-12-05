@@ -6,21 +6,12 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AbstractModel<T> {
+public class AbstractModel {
     private int id;
     private Timestamp createdDate;
     private Timestamp modifiedDate;
     private String createdBy;
     private String modifiedBy;
-    List<T> resultList = new ArrayList<>();
-
-    public List<T> getResultList() {
-        return resultList;
-    }
-
-    public void setResultList(List<T> resultList) {
-        this.resultList = resultList;
-    }
 
     public int getId() {
         return id;
