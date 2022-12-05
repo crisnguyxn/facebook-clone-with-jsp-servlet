@@ -78,3 +78,24 @@ function previewAvatar() {
         preview.src = e.target.result;
     }, false);
 }
+function addFriend(userId) {
+    let loggedId = $('#loggedId').val();
+    $.ajax({
+        url:'addfriend',
+        data:{
+            friendId:userId,
+            loggedId:loggedId
+        },
+        type:'POST'
+    }).done(function (data) {
+        console.log(data);
+    })
+}
+function getFriend(loggedId) {
+    $.ajax({
+        url:'getfriends?id='+loggedId,
+        type:'GET'
+    }).done(function (data) {
+        console.log(data);
+    })
+}

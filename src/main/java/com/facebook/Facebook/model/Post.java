@@ -3,7 +3,7 @@ package com.facebook.Facebook.model;
 import java.sql.Blob;
 import java.util.List;
 
-public class Post extends AbstractModel<Post> {
+public class Post extends AbstractModel {
     private int userId;
     private int mode;
     private String content;

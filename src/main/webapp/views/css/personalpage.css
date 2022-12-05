@@ -3,6 +3,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color: #f0f2f5;
 }
 .personal-header{
     display: flex;
@@ -11,9 +12,19 @@
     flex-direction: column;
     align-items: center;
     height: 650px;
+    border-bottom: 2px solid gray;
+    background-color: white;
+}
+.friend img{
+    object-fit: cover;
+    height: 90%;
+    width: 90%;
+}
+.friend p{
+    margin:5px;
 }
 .personal-cover-photo{
-    width: 60%;
+    width: 65%;
     height: 65%;
     background-image: linear-gradient(#ADADAD, white);
     position: relative;
@@ -48,18 +59,44 @@
     border-radius: 10px;
 }
 .personal-center{
-    width: 60%;
+    width: 65%;
     display: flex;
     justify-content: center;
     background-image: linear-gradient(#d2d2d2, white);
 }
 .center-left{
     flex:0.4;
-    background-color: blue;
+    background-color: #f0f2f5;
+}
+.friend-list{
+    margin:5px;
+    background-color: white;
+    border-radius: 10px;
 }
 .center-right{
     flex:0.6;
-    background-color: green;
+    background-color: #f0f2f5;
+}
+.friend-list-header button{
+    color:#1877f2;
+    background-color: transparent;
+    border:none;
+    text-decoration: underline;
+    font-weight: 200;
+    font-size: 17px;
+}
+.list-header-left :is(h3,p){
+    margin:8px;
+}
+.friend-list-header p{
+    color: gray;
+}
+.friend-list-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Poppins,sans-serif;
+    padding:10px;
 }
 #file{
     opacity: 0;
@@ -74,11 +111,14 @@
 .image{
     display: none;
 }
+.personal-info{
+    display: flex;
+}
 .personal-user-info{
     width: 60%;
     display: flex;
-    justify-content: flex-start;
-    margin-left: 5vh;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
 }
 .user-avatar{
     position: relative;
@@ -154,6 +194,19 @@
     padding:10px;
     background-color: #b2b2b2;
 }
+.add-friend{
+    display: flex;
+    align-items: center;
+}
+.add-friend button{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color:white;
+    border-radius: 10px;
+    padding:10px;
+    background-color: #1877f2;
+    border:none;
+}
 @media only screen and (max-width: 930px) {
 .personal-center{
     flex-direction: column;
@@ -171,25 +224,47 @@
     width: 100%;
 }
 }
-@media only screen and (max-width: 1010px) {
-.personal-center{
-    width: 100%;
+.lists{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding:5px;
 }
+.lists .friend{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding:10px;
+}
+@media only screen and (max-width: 1265px) {
+    .personal-header{
+        width: 100%;
+    }
+    .personal-center{
+        width: 100%;
+    }
+    .personal-user-info{
+        width: 95%;
+    }
+    .personal-cover-photo{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 1010px) {
 .personal-cover-photo{
     height: 55%;
     width: 100%;
 }
 }
 @media only screen and (max-width: 600px) {
-.personal-center{
-    width: 100%;
-}
 .personal-cover-photo{
     height: 45%;
 }
 .personal-user-info{
     flex-direction: column;
     margin-left: 0;
+    align-items: center;
+}
+.personal-info{
+    flex-direction: column;
     align-items: center;
 }
 .user-name{
@@ -199,4 +274,12 @@
 .user-name h3{
     margin-top: 0;
 }
+.add-friend{
+    margin-right: 0;
+}
+}
+@media only screen and (max-width: 400px) {
+    .lists{
+        grid-template-columns: auto auto;
+    }
 }

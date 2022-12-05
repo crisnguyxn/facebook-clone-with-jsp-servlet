@@ -1,6 +1,8 @@
 package com.facebook.Facebook.model;
 
-public class User extends AbstractModel<User> {
+import java.util.List;
+
+public class User extends AbstractModel {
     private String firstName;
     private String surName;
     private String email;
@@ -12,6 +14,15 @@ public class User extends AbstractModel<User> {
     private String coverPhoto;
     private String avtPhoto;
     private String bio;
+    private List<Friend> friendList;
+
+    public List<Friend> getFriendList() {
+        return friendList;
+    }
+
+    public void setFriendList(List<Friend> friendList) {
+        this.friendList = friendList;
+    }
 
     public String getCoverPhoto() {
         return coverPhoto;

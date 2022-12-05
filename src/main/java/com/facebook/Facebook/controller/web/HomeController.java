@@ -1,11 +1,14 @@
 package com.facebook.Facebook.controller.web;
 
+import com.facebook.Facebook.model.Friend;
 import com.facebook.Facebook.model.Post;
 import com.facebook.Facebook.model.User;
 import com.facebook.Facebook.service.ICommentService;
+import com.facebook.Facebook.service.IFriendService;
 import com.facebook.Facebook.service.IPostService;
 import com.facebook.Facebook.service.IUserService;
 import com.facebook.Facebook.serviceimpl.CommentService;
+import com.facebook.Facebook.serviceimpl.FriendService;
 import com.facebook.Facebook.serviceimpl.PostService;
 import com.facebook.Facebook.serviceimpl.UserService;
 import com.facebook.Facebook.utils.FormUtil;
@@ -24,11 +27,12 @@ public class HomeController extends HttpServlet {
     private final IUserService userService;
     private final IPostService postService;
     private final ICommentService commentService;
-
+    private final IFriendService friendService;
     public HomeController() {
         userService = new UserService();
         postService = new PostService();
         commentService = new CommentService();
+        friendService = new FriendService();
     }
 
     @Override
@@ -48,6 +52,8 @@ public class HomeController extends HttpServlet {
         } else {
             User user = (User) req.getSession().getAttribute("USERMODEL");
             User userInfo = userService.findUserById(user.getId());
+            List<Friend> friendList =friendService.findAllById(user.getId());
+            userInfo.setFriendList(friendList);
             req.setAttribute("userInfo", userInfo);
             List<Post> posts = postService.findAll();
             if (posts.size() == 0) {
