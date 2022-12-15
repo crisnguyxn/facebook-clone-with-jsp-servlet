@@ -11,4 +11,5 @@ public interface IPostDAO extends GenericDAO<Post> {
     Post findOneById(Integer postId);
     void delete(Integer id);
     void update(Post updatedPost);
+    List<Post> findAllByUserId(Integer userId);
 }

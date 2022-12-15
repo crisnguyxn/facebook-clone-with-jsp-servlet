@@ -41,4 +41,10 @@ public class PostDAO extends AbstractDAO<Post> implements IPostDAO {
         String sql = "UPDATE post SET content = ?,mode = ?,fileUrl = ? ,createddate = ? ,modifieddate = ? WHERE id = ?";
         update(sql, updatedPost.getContent(),updatedPost.getMode(),updatedPost.getFileUrl(),updatedPost.getCreatedDate(),updatedPost.getModifiedDate(),updatedPost.getId());
     }
+
+    @Override
+    public List<Post> findAllByUserId(Integer userId) {
+        String sql = "SELECT * FROM post AS p INNER JOIN user as u ON p.userid = u.id WHERE userid = ? ORDER BY p.createddate DESC";
+        return query(sql,new PostMapper(),userId);
+    }
 }

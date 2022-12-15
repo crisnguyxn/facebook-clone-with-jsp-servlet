@@ -38,48 +38,6 @@ function getImg(imgFile){
         preview.src = e.target.result;
     }, false);
 }
-$(document).ready(function () {
-    $("#comment").click(function () {
-        $("#commentField").show(100);
-    });
-});
-$(document).ready(function () {
-    $(".post-header-right").click(function () {
-        $(this).children(".options").toggle(500);
-    });
-});
-function updatePost(postId) {
-    $.ajax({
-        url:'getPost?id='+postId,
-        type:'GET'
-    }).done(function (data) {
-        $('#userInfo').text(data.user.firstName +" " + data.user.surName )
-        $('textarea.textarea').val(data.content);
-        $('#mode').val(data.mode);
-        if(data.fileUrl != null){
-            $('#mime').attr("src",data.fileUrl);
-            $("#mime").removeClass("image");
-        }
-    })
-    $('div.form-title').text('Update Post');
-    $('#postForm').attr("action",'/Facebook_war_exploded/update?id='+postId);
-    $("#form").toggle(100);
-}
-function savePost(postId) {
-    console.log(postId);
-}
-function deletePost(postId) {
-    $.ajax({
-        url:'delete?id='+postId,
-        type:'GET'
-    }).done(function () {
-        window.location.reload();
-    })
-}
-function sendCmt() {
-    $('#formCmt').submit();
-}
-
 function getTimeFromNow(createdTime) {
     const time = Date.now() - createdTime;
     let secondsElapsed = Math.floor(time / 1000);

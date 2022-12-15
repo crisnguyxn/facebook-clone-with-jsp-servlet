@@ -10,4 +10,5 @@ public interface IPostService {
     Post findOneById(Integer postId);
     void delete(Integer id);
     void update(Post updatedPost);
+    List<Post> findByUserId(Integer userId);
 }

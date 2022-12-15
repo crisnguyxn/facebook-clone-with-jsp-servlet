@@ -37,4 +37,9 @@ public class PostService implements IPostService {
     public void update(Post updatedPost) {
         postDAO.update(updatedPost);
     }
+
+    @Override
+    public List<Post> findByUserId(Integer userId) {
+        return postDAO.findAllByUserId(userId);
+    }
 }

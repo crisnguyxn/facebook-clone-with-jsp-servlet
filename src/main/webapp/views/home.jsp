@@ -293,4 +293,5 @@
     <%@ include file="css/home.css" %>
 </style>
 <script type="text/javascript" src="${pageContext.request.contextPath}/views/js/home.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/views/js/general.js"></script>
 </html>

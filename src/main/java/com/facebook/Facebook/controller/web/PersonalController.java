@@ -1,10 +1,15 @@
 package com.facebook.Facebook.controller.web;
 
 import com.facebook.Facebook.model.Friend;
+import com.facebook.Facebook.model.Post;
 import com.facebook.Facebook.model.User;
+import com.facebook.Facebook.service.ICommentService;
 import com.facebook.Facebook.service.IFriendService;
+import com.facebook.Facebook.service.IPostService;
 import com.facebook.Facebook.service.IUserService;
+import com.facebook.Facebook.serviceimpl.CommentService;
 import com.facebook.Facebook.serviceimpl.FriendService;
+import com.facebook.Facebook.serviceimpl.PostService;
 import com.facebook.Facebook.serviceimpl.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javax.servlet.RequestDispatcher;
@@ -24,9 +29,13 @@ public class PersonalController extends HttpServlet {
 
     private final IUserService userService;
     private final IFriendService friendService;
+    private final IPostService postService;
+    private final ICommentService commentService;
     public PersonalController() {
         friendService = new FriendService();
         userService = new UserService();
+        postService = new PostService();
+        commentService = new CommentService();
     }
 
     @Override
@@ -36,6 +45,15 @@ public class PersonalController extends HttpServlet {
             String userId = req.getParameter("id");
             User user = userService.findUserById(Integer.valueOf(userId));
             List<Friend> friendList = friendService.findAllById(Integer.valueOf(userId));
+            List<Post> posts = postService.findByUserId(Integer.valueOf(userId));
+            if (posts.size() == 0) {
+                req.setAttribute("message","No post yet");
+            } else {
+                for (Post post : posts) {
+                    post.setCommentList(commentService.findAll(post.getId()));
+                };
+            }
+            req.setAttribute("models",posts);
             user.setFriendList(friendList);
             User loggedUser = (User) req.getSession().getAttribute("USERMODEL");
             req.setAttribute("loggedUser",loggedUser);

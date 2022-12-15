@@ -1,6 +1,6 @@
 function previewPhoto() {
     const preview = document.getElementById('coverPhoto');
-    const selectedFile = document.getElementById('file').files[0];
+    const selectedFile = document.getElementById('fileCover').files[0];
     const reader = new FileReader();
     console.log(selectedFile);
     if(selectedFile === undefined){
@@ -17,7 +17,7 @@ function previewPhoto() {
     }, false);
 }
 function discard(userId){
-    let coverQueried = document.getElementById('file').files[0];
+    let coverQueried = document.getElementById('fileCover').files[0];
     let avtQueried = document.getElementById('avatar').files[0];
     $.ajax({
         url:'userInfo?id='+userId,
@@ -44,7 +44,7 @@ function discard(userId){
 }
 function updateUser(userId) {
     let avtPhotoQueried = document.getElementById('avatar').files;
-    let coverPhotoQueried = document.getElementById('file').files;
+    let coverPhotoQueried = document.getElementById('fileCover').files;
     const formData = new FormData();
     formData.append("coverFile",coverPhotoQueried[0]);
     formData.append("avtFile",avtPhotoQueried[0]);
@@ -95,7 +95,5 @@ function getFriend(loggedId) {
     $.ajax({
         url:'getfriends?id='+loggedId,
         type:'GET'
-    }).done(function (data) {
-        console.log(data);
     })
 }
